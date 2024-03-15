@@ -22,6 +22,6 @@ pip install pytest-playwright
 
 # Install Playwright deps and Firefox browser for e2e tests
 playwright install-deps
-playwright install firefox
+playwright install
 
 rm -rf /var/lib/apt/lists/*
