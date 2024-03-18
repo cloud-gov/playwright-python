@@ -20,7 +20,7 @@ pip install playwright
 # Install Pytest Playwright
 pip install pytest-playwright
 
-# Install Playwright deps and Firefox browser for e2e tests
+# Install Playwright deps and browsers for e2e tests
 playwright install-deps
 playwright install
 
