@@ -2,8 +2,6 @@ ARG base_image
 
 FROM ${base_image}
 
-ENV NODE_VERSION v20.11.0
-
 COPY . /playwright
 WORKDIR /playwright
 

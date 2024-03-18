@@ -3,26 +3,25 @@
 set -e
 
 apt-get update
-apt-get -y upgrade
 apt-get -y -q install \
-  git \
-  wget \
-  xz-utils
+  python3-pip \
+  python3-venv
 
-#install nodejs from source
-wget "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar.xz"
-mkdir -p /usr/local/lib/nodejs
-tar -xJvf node-${NODE_VERSION}-linux-x64.tar.xz -C /usr/local/lib/nodejs
-ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-linux-x64/bin/node /usr/bin/node
-ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-linux-x64/bin/npm /usr/bin/npm
-ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-linux-x64/bin/npx /usr/bin/npx
-rm -f "node-${NODE_VERSION}-linux-x64.tar.xz"
+apt-get clean
 
-npm install --global yarn
-ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-linux-x64/bin/yarn /usr/bin/yarn
+# symlink python to python3 executable
+ln -s "$(which python3)" /usr/bin/python
 
-yarn add playwright
-npx playwright install-deps
-npx playwright install
+pip install --upgrade pip
+
+# Install Playwright
+pip install playwright
+
+# Install Pytest Playwright
+pip install pytest-playwright
+
+# Install Playwright deps and browsers for e2e tests
+playwright install-deps
+playwright install
 
 rm -rf /var/lib/apt/lists/*
