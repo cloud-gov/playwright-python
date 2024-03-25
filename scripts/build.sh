@@ -22,6 +22,5 @@ pip install pytest-playwright
 
 # Install Playwright deps and browsers for e2e tests
 playwright install-deps
-playwright install
 
 rm -rf /var/lib/apt/lists/*
