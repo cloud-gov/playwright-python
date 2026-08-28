@@ -3,7 +3,8 @@
 set -e
 
 apt-get update
-apt-get -y -q install \
+apt-get -y upgrade
+apt-get -y -q install --no-install-recommends \
   python3-pip \
   python3-venv
 
