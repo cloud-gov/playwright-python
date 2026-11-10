@@ -6,7 +6,8 @@ apt-get update
 apt-get -y upgrade
 apt-get -y -q install --no-install-recommends \
   python3-pip \
-  python3-venv
+  python3-venv \
+  libatomic1
 
 apt-get clean
 
