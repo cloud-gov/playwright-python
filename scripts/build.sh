@@ -17,6 +17,7 @@ apt-get clean
 # symlink python to python3 executable
 ln -s "$(which python3.13)" /usr/bin/python
 
+# Upgrade pip
 python -m ensurepip --upgrade --default-pip
 
 # Install Playwright
