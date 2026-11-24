@@ -5,7 +5,9 @@ set -e
 apt-get update
 apt-get -y upgrade
 apt-get -y -q install --no-install-recommends \
-  libatomic1
+  libatomic1 \
+  software-properties-common \
+  gnupg
 
 # Install Python
 add-apt-repository -y ppa:deadsnakes/ppa
